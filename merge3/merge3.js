@@ -74,22 +74,16 @@ function updateTile(tile, num) { // updates tile visually in HTML
 function merge() {
     mergeDelay = false;
     scoreCheck = score;
-    console.log("hi");
     h5();
     if (mergeDelay == false) {
-        console.log("hi2");
         v5();
         if (mergeDelay == false) {
-            console.log("hi3");
             h4();
             if (mergeDelay == false) {
-                console.log("hi4");
                 v4();
                 if (mergeDelay == false) {
-                    console.log("hi5");
                     h3();
                     if (mergeDelay == false) {
-                        console.log("hiiiiiiiiiiiii");
                         v3();
                         if (scoreCheck != score) {
                             wait();
@@ -395,6 +389,7 @@ document.addEventListener("keyup", (e) => { // takes the arrow key presses
     if (move == true && shouldSet == true) {
         setNew();
         shouldSet = false;
+        wait();
     }
 
     document.getElementById("score").innerText = score;
