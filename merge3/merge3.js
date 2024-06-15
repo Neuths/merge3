@@ -4,7 +4,9 @@ let score = 0;
 let rows = 5;
 let columns = 5;
 let check = 0;
-let merged = false;
+let shouldSet = true;
+let mergeTimer;
+let mergeDelay;
 
 window.onload = function() {
     setGame(); // Starting board
@@ -14,7 +16,7 @@ window.onload = function() {
 function setGame() { // prepares the game board
 
     board = [
-        [1, 1, 0, 1, 1],
+        [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
@@ -59,47 +61,7 @@ function updateTile(tile, num) { // updates tile visually in HTML
     tile.classList.add("tile");
     if (num > 0) {
         tile.innerText = num;
-        /*
-        if (num == 1) {
-            tile.innerText = "🞄";
-        }
-        if (num == 2) {
-            tile.innerText = "•";
-        }
-        if (num == 3) {
-            tile.innerText = "·";
-        }
-        if (num == 4) {
-            tile.innerText = "■";
-        }
-        if (num == 5) {
-            tile.innerText = "⚬";
-        }
-        if (num == 6) {
-            tile.innerText = "○";
-        }
-        if (num == 7) {
-            tile.innerText = "◯";
-        }
-        if (num == 8) {
-            tile.innerText = "⦸";
-        }
-        if (num == 8) {
-            tile.innerText = "⦻";
-        }
-        if (num == 9) {
-            tile.innerText = "◍";
-        }
-        if (num == 10) {
-            tile.innerText = "◌";
-        }
-        if (num == 11) {
-            tile.innerText = "✪";
-        }
-        */
 
-        // ○◌◍●◯⚬✪⦸⦻⨀⨁⨂⬤⦾⦿■□•∙·¤
-        // tile.innerText = num;
         if (num <= 12) {
             tile.classList.add("x"+num.toString());
         } else {
@@ -108,84 +70,48 @@ function updateTile(tile, num) { // updates tile visually in HTML
     }
 }
 
-function merge() { // the big code spaghetti that merges tiles together (3-4-5 in a row)
+
+function merge() {
+    mergeDelay = false;
+    scoreCheck = score;
+    console.log("hi");
+    h5();
+    if (mergeDelay == false) {
+        console.log("hi2");
+        v5();
+        if (mergeDelay == false) {
+            console.log("hi3");
+            h4();
+            if (mergeDelay == false) {
+                console.log("hi4");
+                v4();
+                if (mergeDelay == false) {
+                    console.log("hi5");
+                    h3();
+                    if (mergeDelay == false) {
+                        console.log("hiiiiiiiiiiiii");
+                        v3();
+                        if (scoreCheck != score) {
+                            wait();
+                        }
+                    } else {
+                        wait();
+                    }
+                } else {
+                    wait();
+                }
+            } else {
+                wait();
+            }
+        } else {
+            wait();
+        }
+    } else {
+        wait();
+    }
     
-    merged = false;
-
-    for (let r = 0; r < rows; r++) { // 4 horizontal
-        for (let c = 0; c < columns - 3; c++) {
-            let tile1 = board[r][c];
-            let tile2 = board[r][c+1];
-            let tile3 = board[r][c+2];
-            let tile4 = board[r][c+3];
-            if (tile1 != 0 && tile1 == tile2 && tile2 == tile3 && tile3 == tile4) {
-
-                console.log("merged horizontally");
-            
-                board[r][c] = 0;
-                board[r][c+1] += 1;
-                board[r][c+2] += 1;
-                board[r][c+3] = 0;
-                score += (tile2 * 4);
-                merged = true;
-            }
-        }
-    }
-
-    for (let c = 0; c < columns; c++) { // 4 vertical
-        for (let r = 0; r < rows - 3; r++) {
-            let tile1 = board[r][c];
-            let tile2 = board[r+1][c];
-            let tile3 = board[r+2][c];
-            let tile4 = board[r+3][c];
-            if (tile1 != 0 && tile1 == tile2 && tile2 == tile3 && tile3 == tile4) {
-
-                console.log("merged vertically");
-            
-                board[r][c] = 0;
-                board[r+1][c] += 1;
-                board[r+2][c] += 1;
-                board[r+3][c] = 0;
-                score += (tile2 * 4);
-                merged = true;
-            }
-        }
-    }
-
-    for (let r = 0; r < rows; r++) { // 3 horizontal
-        for (let c = 0; c < columns - 2; c++) {
-            let tile1 = board[r][c];
-            let tile2 = board[r][c+1];
-            let tile3 = board[r][c+2];
-            if (tile1 != 0 && tile1 == tile2 && tile2 == tile3) {
-
-                console.log("merged horizontally");
-            
-                board[r][c] = 0;
-                board[r][c+1] += 1;
-                board[r][c+2] = 0;
-                score += (tile2 * 3);
-                merged = true;
-            }
-        }
-    }
-
-    for (let c = 0; c < columns; c++) { // 3 vertical
-        for (let r = 0; r < rows - 2; r++) {
-            let tile1 = board[r][c];
-            let tile2 = board[r+1][c];
-            let tile3 = board[r+2][c];
-            if (tile1 != 0 && tile1 == tile2 && tile2 == tile3) {
-
-                console.log("merged vertically");
-            
-                board[r][c] = 0;
-                board[r+1][c] += 1;
-                board[r+2][c] = 0;
-                score += (tile2 * 3);
-                merged = true;
-            }
-        }
+    if (scoreCheck < score) {
+        shouldSet = false;
     }
 
     for (let r = 0; r < rows; r++) { // update all tiles after merging
@@ -195,33 +121,149 @@ function merge() { // the big code spaghetti that merges tiles together (3-4-5 i
             updateTile(tile, num);
         }
     }
-    /*
-    for (let i = 2; i < 3; i++) { // 5 in a row
-        
-        if (row[i] != 0 && row[i-2] == row[i-1] == row[i] == row[i+1] == row[i+2]) {
+}
 
-            row[i-2] = 0;
-            row[i-1] = 0;
-            row[i] += 2;
-            row[i+1] = 0;
-            row[i+2] = 0;
-            score += (row[i] * 5);
+
+function wait() {
+    setTimeout(merge, 300);
+}
+
+
+function h5() { // 5 horizontal
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns - 4; c++) {
+            let tile1 = board[r][c];
+            let tile2 = board[r][c+1];
+            let tile3 = board[r][c+2];
+            let tile4 = board[r][c+3];
+            let tile5 = board[r][c+4];
+            if (tile1 != 0 && tile1 == tile2 && tile2 == tile3 && tile3 == tile4 && tile4 == tile5) {
+
+                console.log("merged 5 " + tile3 + "'s horizontally");
+                console.log("Added " + (tile3 * 5) + " points!");
+            
+                board[r][c] = 0;
+                board[r][c+1] = 0;
+                board[r][c+2] += 2;
+                board[r][c+3] = 0;
+                board[r][c+4] = 0;
+                score += (tile3 * 5);
+                mergeDelay = true;
+            }
         }
     }
+}
 
-    for (let i = 1; i < 3; i++) { // 4 in a row
-        if (row[i] != 0 && row[i-1] == row[i] == row[i+1] == row[i+2]) {
+function v5() { // 5 vertical
+    for (let c = 0; c < columns; c++) {
+        for (let r = 0; r < rows - 4; r++) {
+            let tile1 = board[r][c];
+            let tile2 = board[r+1][c];
+            let tile3 = board[r+2][c];
+            let tile4 = board[r+3][c];
+            let tile5 = board[r+4][c];
+            if (tile1 != 0 && tile1 == tile2 && tile2 == tile3 && tile3 == tile4 && tile4 == tile5) {
 
-            row[i-1] = 0;
-            row[i] += 1;
-            row[i+1] += 1;
-            row[i+2] = 0;
-            score += (row[i] * 4);
+                console.log("merged 5 " + tile3 + "'s vertically");
+                console.log("Added " + (tile3 * 5) + " points!");
+
+                board[r][c] = 0;
+                board[r+1][c] = 0;
+                board[r+2][c] += 2;
+                board[r+3][c] = 0;
+                board[r+4][c] = 0;
+                score += (tile3 * 5);
+                mergeDelay = true;
+            }
         }
     }
-    */
-    while (merged == true) {
-        merge();
+}
+
+function h4() { // 4 horizontal
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns - 3; c++) {
+            let tile1 = board[r][c];
+            let tile2 = board[r][c+1];
+            let tile3 = board[r][c+2];
+            let tile4 = board[r][c+3];
+            if (tile1 != 0 && tile1 == tile2 && tile2 == tile3 && tile3 == tile4) {
+
+                console.log("merged 4 " + tile2 + "'s horizontally");
+                console.log("Added " + (tile2 * 4) + " points!");
+
+                board[r][c] = 0;
+                board[r][c+1] += 1;
+                board[r][c+2] += 1;
+                board[r][c+3] = 0;
+                score += (tile2 * 4);
+                mergeDelay = true;
+            }
+        }
+    }
+}
+
+function v4() { // 4 vertical
+    for (let c = 0; c < columns; c++) {
+        for (let r = 0; r < rows - 3; r++) {
+            let tile1 = board[r][c];
+            let tile2 = board[r+1][c];
+            let tile3 = board[r+2][c];
+            let tile4 = board[r+3][c];
+            if (tile1 != 0 && tile1 == tile2 && tile2 == tile3 && tile3 == tile4) {
+
+                console.log("merged 4 " + tile2 + "'s vertically");
+                console.log("Added " + (tile2 * 4) + " points!");
+            
+                board[r][c] = 0;
+                board[r+1][c] += 1;
+                board[r+2][c] += 1;
+                board[r+3][c] = 0;
+                score += (tile2 * 4);
+                mergeDelay = true;
+            }
+        }
+    }
+}
+
+function h3() { // 3 horizontal
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns - 2; c++) {
+            let tile1 = board[r][c];
+            let tile2 = board[r][c+1];
+            let tile3 = board[r][c+2];
+            if (tile1 != 0 && tile1 == tile2 && tile2 == tile3) {
+
+                console.log("merged 3 " + tile2 + "'s horizontally");
+                console.log("Added " + (tile2 * 3) + " points!");
+            
+                board[r][c] = 0;
+                board[r][c+1] += 1;
+                board[r][c+2] = 0;
+                score += (tile2 * 3);
+                mergeDelay = true;
+            }
+        }
+    }
+}
+
+function v3() { // 3 vertical
+    for (let c = 0; c < columns; c++) {
+        for (let r = 0; r < rows - 2; r++) {
+            let tile1 = board[r][c];
+            let tile2 = board[r+1][c];
+            let tile3 = board[r+2][c];
+            if (tile1 != 0 && tile1 == tile2 && tile2 == tile3) {
+
+                console.log("merged 3 " + tile2 + "'s vertically");
+                console.log("Added " + (tile2 * 3) + " points!");
+            
+                board[r][c] = 0;
+                board[r+1][c] += 1;
+                board[r+2][c] = 0;
+                score += (tile2 * 3);
+                mergeDelay = true;
+            }
+        }
     }
 }
 
@@ -307,8 +349,9 @@ function slideDown() {
 
 
 document.addEventListener("keyup", (e) => { // takes the arrow key presses
-    console.log(board);
+    console.log("move");
     let move = false;
+    shouldSet = true;
     if (e.code == "ArrowLeft" || e.code == "KeyA") {
         for (let r = 0; r < rows; r++) {
             for (let c = 0; c < columns - 1; c++) {
@@ -349,11 +392,10 @@ document.addEventListener("keyup", (e) => { // takes the arrow key presses
 
     merge();
 
-    if (move == true) {
+    if (move == true && shouldSet == true) {
         setNew();
+        shouldSet = false;
     }
-
-    merge();
 
     document.getElementById("score").innerText = score;
 })
