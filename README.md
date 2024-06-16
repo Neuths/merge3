@@ -1,6 +1,8 @@
 # Merge 3
 Lõpmatu mõistatusmäng, kus on vaja saada kolm või rohkem sama arvuga ruutu ritta, et kombineerida need suurtemateks numbriteks!
 
+<br/>
+
 <img src="https://github.com/Neuths/merge3/assets/117487287/6651251d-9654-4ec7-a75e-be0bae87ad76.type" width="250">
 
 <br/><br/>
