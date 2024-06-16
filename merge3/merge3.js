@@ -1,12 +1,10 @@
 
-let board;
-let score = 0;
-let rows = 5;
+let board; // game grid
+let score = 0; // starting score
+let rows = 5; // board parameters
 let columns = 5;
-let check = 0;
-let shouldSet = true;
-let mergeTimer;
-let mergeDelay;
+let shouldSet = true; // decides if setNew() should activate, does not if a merge happens
+let mergeDelay; // makes the delay pyramid function
 
 window.onload = function() {
     setGame(); // Starting board
