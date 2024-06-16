@@ -18,7 +18,7 @@ Lõpmatu mõistatusmäng, kus on vaja saada kolm või rohkem sama arvuga ruutu r
 2. *Extract*-i failid *.zip*-ist välja kausta
 3. Mine kausta merge3 > merge3.html, seda avades peaks mäng ennast käima panema sinu veebibrauseris
 
-<img src="https://github.com/Neuths/merge3/assets/117487287/4f5d4944-8dbb-4f43-bb23-eb833a2bb117.type" width="100">
+<img src="https://github.com/Neuths/merge3/assets/117487287/4f5d4944-8dbb-4f43-bb23-eb833a2bb117.type" width="400">
 
 ### Näide ruutude kombineerimisest:
 ![image](https://github.com/Neuths/merge3/assets/117487287/4f5d4944-8dbb-4f43-bb23-eb833a2bb117)
