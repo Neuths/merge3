@@ -1,10 +1,11 @@
 # Merge 3
 Lõpmatu mõistatusmäng, kus on vaja saada kolm või rohkem sama arvuga ruutu ritta, et kombineerida need suurtemateks numbriteks!
 
-![Capture](https://github.com/Neuths/merge3/assets/117487287/6651251d-9654-4ec7-a75e-be0bae87ad76)
+<img src="https://github.com/Neuths/merge3/assets/117487287/6651251d-9654-4ec7-a75e-be0bae87ad76.type" width="250">
 
-## Ott (mina) - suurem osa Javascripti autorist
-## Sleep (hüüdnimi, mitte eestlane) - aitas korrigeerida värve CSS-is, et klotsid paremini välja näeks
+
+Ott (mina) - suurem osa Javascripti autorist
+Sleep (hüüdnimi, mitte eestlane) - aitas korrigeerida värve CSS-is, et klotsid paremini välja näeks
 
 
 > **Mängu kirjeldus:**
@@ -18,21 +19,16 @@ Lõpmatu mõistatusmäng, kus on vaja saada kolm või rohkem sama arvuga ruutu r
 2. *Extract*-i failid *.zip*-ist välja kausta
 3. Mine kausta merge3 > merge3.html, seda avades peaks mäng ennast käima panema sinu veebibrauseris
 
-<img src="https://github.com/Neuths/merge3/assets/117487287/4f5d4944-8dbb-4f43-bb23-eb833a2bb117.type" width="400">
+
 
 ### Näide ruutude kombineerimisest:
-![image](https://github.com/Neuths/merge3/assets/117487287/4f5d4944-8dbb-4f43-bb23-eb833a2bb117)
+<img src="https://github.com/Neuths/merge3/assets/117487287/4f5d4944-8dbb-4f43-bb23-eb833a2bb117.type" width="400">
 
 ### Vajutati alla *down arrow* klahvi, kolm ühte kombineerisid kaheks ja andsid 6 punkti:
-![image](https://github.com/Neuths/merge3/assets/117487287/7829d84e-7103-4713-9619-7619a29ff089)
+<img src="https://github.com/Neuths/merge3/assets/117487287/7829d84e-7103-4713-9619-7619a29ff089.type" width="400">
 
-
-
-Minu parim skoor:
-![image](https://github.com/Neuths/merge3/assets/117487287/29c09948-01de-4ccb-a2e4-3aa93ce841f5)
-
-
-
+### Minu parim skoor:
+<img src="https://github.com/Neuths/merge3/assets/117487287/29c09948-01de-4ccb-a2e4-3aa93ce841f5.type" width="400">
 
 
 
