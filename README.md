@@ -8,10 +8,13 @@ Ott (mina) - suurem osa Javascripti autorist
 Sleep (hüüdnimi, mitte eestlane) - aitas korrigeerida värve CSS-is, et klotsid paremini välja näeks
 
 
-> **Mängu kirjeldus:**
-> Mäng toimub 5x5 ruudustikul, kus tekib juurde uus numbriga 1 ruut iga kord, kui liigutad ruute ringi. Kõik ruudud liiguvad korraga ühe ühiku kaupa selles suunas, mis suunas sa vajutad nooleklahve (või WASD). Kui mängija liigutab 3-5 sama numbriga ruutu kõrvuti, siis kombineeruvad (merge) need suurtemateks numbriteks ja annavad punkte. Ühe käiguga võib kombineeruda mitu ruudu rida, ka nii et tekib ahelreaktsioon. Kui toimub ahelreaktsioon (või tekib uus ruut nii, et automaatselt moodustab kolmese või suurema rea), siis on 0.3 sekundiline paus, et näeks visuaalselt, mis mängus kombineerimise ajal toimub. Klotse ei tule juurde siis, kui sa eelmisel käigul ruute kombineerid. Mäng kontrollib, kas nooleklahve vajutades midagi liigub; kui ei, siis mäng ei lisa uusi ruute mänguväljale. Konsooli vaadates inspect elementi kasutades on võimalik jälgida, mis klotsid mis moodi kombineerisid ja kui palju punkte andsid.
->
-> Kui sa suudad tekitada 7 ruudu, siis oled võitnud mängu!
+
+**Mängu kirjeldus:**
+Mäng toimub 5x5 ruudustikul, kus tekib juurde uus numbriga 1 ruut iga kord, kui liigutad ruute ringi. Kõik ruudud liiguvad korraga ühe ühiku kaupa selles suunas, mis suunas sa vajutad nooleklahve (või WASD). Kui mängija liigutab 3-5 sama numbriga ruutu kõrvuti, siis kombineeruvad (merge) need suurtemateks numbriteks ja annavad punkte. Ühe käiguga võib kombineeruda mitu ruudu rida, ka nii et tekib ahelreaktsioon. Kui toimub ahelreaktsioon (või tekib uus ruut nii, et automaatselt moodustab kolmese või suurema rea), siis on 0.3 sekundiline paus, et näeks visuaalselt, mis mängus kombineerimise ajal toimub. Klotse ei tule juurde siis, kui sa eelmisel käigul ruute kombineerid. Mäng kontrollib, kas nooleklahve vajutades midagi liigub; kui ei, siis mäng ei lisa uusi ruute mänguväljale. Konsooli vaadates inspect elementi kasutades on võimalik jälgida, mis klotsid mis moodi kombineerisid ja kui palju punkte andsid.
+
+Kui sa suudad tekitada 7 ruudu, siis oled võitnud mängu!
+
+
 
 
 **Õpetused mängimiseks:**
