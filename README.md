@@ -24,7 +24,7 @@ Sleep (hüüdnimi, mitte eestlane) - aitas korrigeerida värve CSS-is, et klotsi
 ### Näide ruutude kombineerimisest:
 <img src="https://github.com/Neuths/merge3/assets/117487287/4f5d4944-8dbb-4f43-bb23-eb833a2bb117.type" width="400">
 
-### Vajutati alla *down arrow* klahvi, kolm ühte kombineerisid kaheks ja andsid 6 punkti:
+### Vajutati alla *down arrow* klahvi, kolm ühte kombineerisid kaheks ja andis 3 punkti:
 <img src="https://github.com/Neuths/merge3/assets/117487287/7829d84e-7103-4713-9619-7619a29ff089.type" width="400">
 
 ### Minu parim skoor:
